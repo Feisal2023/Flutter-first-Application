@@ -35,6 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  String _timeStatus() {
+    return _counter <= 1 ? "time" : "times";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text("You have pushed the button this many time:"),
+            const Text("You have pushed the button this many times:"),
             Text(
-              '$_counter',
+              '$_counter  ${_timeStatus()}',
               style: Theme.of(context).textTheme.headlineMedium,
             )
           ],
